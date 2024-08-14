@@ -1,0 +1,17 @@
+services:
+  mediamtx:
+    image: "bluenviron/mediamtx:1.8.5"
+    network_mode: host
+    restart: always
+  videocapture:
+    image: "nik123-videocapture"
+    depends_on:
+        - mediamtx
+    build:
+      context: ./videocapture
+      dockerfile: Dockerfile
+    volumes:
+      - ./videocapture:/workspace
+    network_mode: host
+    command: python3 main.py
+

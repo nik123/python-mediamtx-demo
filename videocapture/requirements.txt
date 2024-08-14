@@ -1,0 +1,4 @@
+pyav
+numpy
+# opencv-python
+zephyr-rtsp
